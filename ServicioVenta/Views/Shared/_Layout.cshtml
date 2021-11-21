@@ -1,0 +1,281 @@
+﻿@using ServicioVenta.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/PluginsCSS")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/PluginsJS")
+    @RenderSection("estilos", required: false)
+    
+
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="~/Content/menu/css/menuSt.css" rel="stylesheet" />
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
+
+        //CONTROLADOR ROL
+        $.MisUrls.urls({ _ObtenerRoles: '@Url.Action("Obtener", "Rol")' });
+        $.MisUrls.urls({ _GuardarRol: '@Url.Action("Guardar", "Rol")' });
+        $.MisUrls.urls({ _EliminarRol: '@Url.Action("Eliminar", "Rol")' });
+
+        //CONTROLADOR PERMISOS
+        $.MisUrls.urls({ _ObtenerPermisos: '@Url.Action("Obtener", "Permisos")' });
+        $.MisUrls.urls({ _GuardarPermisos: '@Url.Action("Guardar", "Permisos")' });
+
+
+        //CONTROLADOR USUARIO
+        $.MisUrls.urls({ _ObtenerUsuarios: '@Url.Action("Obtener", "Usuario")' });
+        $.MisUrls.urls({ _GuardarUsuario: '@Url.Action("Guardar", "Usuario")' });
+        $.MisUrls.urls({ _EliminarUsuario: '@Url.Action("Eliminar", "Usuario")' });
+
+        //CONTROLADOR PROVEEDOR
+        $.MisUrls.urls({ _ObtenerProveedores: '@Url.Action("Obtener", "Proveedor")' });
+        $.MisUrls.urls({ _GuardarProveedor: '@Url.Action("Guardar", "Proveedor")' });
+        $.MisUrls.urls({ _EliminarProveedor: '@Url.Action("Eliminar", "Proveedor")' });
+
+        //CONTROLADOR CATEGORIA
+        $.MisUrls.urls({ _ObtenerCategorias: '@Url.Action("Obtener", "Categoria")' });
+        $.MisUrls.urls({ _GuardarCategoria: '@Url.Action("Guardar", "Categoria")' });
+        $.MisUrls.urls({ _EliminarCategoria: '@Url.Action("Eliminar", "Categoria")' });
+
+
+         //CONTROLADOR PRODUCTO
+        $.MisUrls.urls({ _ObtenerProductos: '@Url.Action("Obtener", "Producto")' });
+        $.MisUrls.urls({ _ObtenerProductosPorTienda: '@Url.Action("ObtenerPorTienda", "Producto")' });
+        $.MisUrls.urls({ _GuardarProducto: '@Url.Action("Guardar", "Producto")' });
+        $.MisUrls.urls({ _EliminarProducto: '@Url.Action("Eliminar", "Producto")' });
+        $.MisUrls.urls({ _ObtenerAsignaciones: '@Url.Action("ObtenerAsignaciones", "Producto")' });
+        $.MisUrls.urls({ _RegistrarProductoTienda: '@Url.Action("RegistrarProductoTienda", "Producto")' });
+        $.MisUrls.urls({ _ModificarProductoTienda: '@Url.Action("ModificarProductoTienda", "Producto")' });
+        $.MisUrls.urls({ _EliminarProductoTienda: '@Url.Action("EliminarProductoTienda", "Producto")' });
+
+
+        //CONTROLADOR TIENDA
+        $.MisUrls.urls({ _ObtenerTiendas: '@Url.Action("Obtener", "Tienda")' });
+         $.MisUrls.urls({ _GuardarTienda: '@Url.Action("Guardar", "Tienda")' });
+        $.MisUrls.urls({ _EliminarTienda: '@Url.Action("Eliminar", "Tienda")' });
+
+        //CONTROLADOR COMPRA
+        $.MisUrls.urls({ _ObtenerCompras: '@Url.Action("Obtener", "Compra")' });
+        $.MisUrls.urls({ _GuardarCompra: '@Url.Action("Guardar", "Compra")' });
+        $.MisUrls.urls({ _DocumentoCompra: '@Url.Action("Documento", "Compra")' });
+
+
+        //CONTROLADOR VENTA
+        $.MisUrls.urls({ _ObtenerUsuario: '@Url.Action("ObtenerUsuario", "Venta")' });
+        $.MisUrls.urls({ _ObtenerProductoStockPorTienda: '@Url.Action("ObtenerProductoPorTienda", "Venta")' });
+        $.MisUrls.urls({ _ControlarStockProducto: '@Url.Action("ControlarStock", "Venta")' });
+        $.MisUrls.urls({ _RegistrarVenta: '@Url.Action("Guardar", "Venta")' });
+        $.MisUrls.urls({ _DocumentoVenta: '@Url.Action("Documento", "Venta")' });
+        $.MisUrls.urls({ _ObtenerVentas: '@Url.Action("Obtener", "Venta")' });
+
+        //CONTROLADOR REPORTE
+        $.MisUrls.urls({ _ObtenerReporteProducto :'@Url.Action("ObtenerProducto", "Reporte")' });
+        $.MisUrls.urls({ _ObtenerReporteVenta :'@Url.Action("ObtenerVenta", "Reporte")' });
+
+
+        //CONTROLADOR CLIENTE
+        $.MisUrls.urls({ _ObtenerClientes: '@Url.Action("Obtener", "Cliente")' });
+        $.MisUrls.urls({ _GuardarCliente: '@Url.Action("Guardar", "Cliente")' });
+        $.MisUrls.urls({ _EliminarCliente: '@Url.Action("Eliminar", "Cliente")' });
+
+
+        //lenguaje español datatable
+        $.MisUrls.urls({ Url_datatable_spanish: '@Url.Content("~/content/plugins/datatables/js/datatable_spanish.json")' });
+
+
+
+    </script>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">Tienda Ventas</a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="sidebar-header">
+                    <div class="user-pic">
+                        <img class="img-fluid img-rounded">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">
+                            Brayan
+                            <strong>Javier</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <a href="/Home/Cerrar">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-menu">
+                    
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+
+                        <li class="sidebar-dropdown">
+                            <a href="/Home/Index">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li class='sidebar-dropdown'>
+                            <a href='#'>
+                                <i class='fa fa-list-alt'></i>
+                                <span>Mantenedor</span>
+                            </a>
+                            <div class='sidebar-submenu'>
+                                <ul>
+                                    <li>
+                                        <a href='/Rol/Crear'>Rol</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Permisos/Crear'>Asignar Permisos</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Usuario/Crear'>Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Categoria/Crear'>Categorias</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Producto/Crear'>Productos</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class='sidebar-dropdown'>
+                            <a href='#'>
+                                <i class='fa fa-list-alt'></i>
+                                <span>Clientes</span>
+                            </a>
+                            <div class='sidebar-submenu'>
+                                <ul>
+                                    <li>
+                                        <a href='/Cliente/Crear'>Clientes</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class='sidebar-dropdown'>
+                            <a href='#'>
+                                <i class='fa fa-list-alt'></i>
+                                <span>Compras</span>
+                            </a>
+                            <div class='sidebar-submenu'>
+                                <ul>
+                                    <li>
+                                        <a href='/Proveedor/Crear'>Proveedores</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Producto/Asignar'>Asignar producto a Tienda</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Compra/Crear'>Registrar Compra</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Compra/Consultar'>Consultar Compra</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class='sidebar-dropdown'>
+                            <a href='#'>
+                                <i class='fa fa-list-alt'></i>
+                                <span>Ventas</span>
+                            </a>
+                            <div class='sidebar-submenu'>
+                                <ul>
+                                    <li>
+                                        <a href='/Tienda/Crear'>Tiendas</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Venta/Crear'>Registrar Venta</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Venta/Consultar'>Consultar Venta</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class='sidebar-dropdown'>
+                            <a href='#'>
+                                <i class='fa fa-list-alt'></i>
+                                <span>Reportes</span>
+                            </a>
+                            <div class='sidebar-submenu'>
+                                <ul>
+                                    <li>
+                                        <a href='/Reporte/Producto'>Productos por tienda</a>
+                                    </li>
+                                    <li>
+                                        <a href='/Reporte/Ventas'>Ventas</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- sidebar-menu  -->
+                </div>
+            </div>
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="container-fluid">
+                <div class="row m-4">
+                </div>
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Todos los derechos reservados</p>
+                </footer>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/menu/js/menu.js"></script>
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>
