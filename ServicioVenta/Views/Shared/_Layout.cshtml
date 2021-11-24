@@ -125,7 +125,7 @@
                         </span>
                     </div>
                     <div class="input-group">
-                        <a href="/Home/Cerrar">
+                        <a href="/Home/Salir">
                             <i class="fa fa-power-off"></i>
                         </a>
                     </div>
@@ -263,19 +263,15 @@
                 <div class="row m-4">
                 </div>
                 @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - Todos los derechos reservados</p>
-                </footer>
+                <hr/> 
             </div>
         </main>
         <!-- page-content" -->
     </div>
 
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-    <script src="~/Content/menu/js/menu.js"></script>
+    <script src="~/Content/menu/js/menu.js"></script> 
 
-    
     @RenderSection("scripts", required: false)
 </body>
 </html>
