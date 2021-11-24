@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using VentasWeb.Utilidades;
 
-namespace VentasWeb.Controllers
+namespace ServicioVenta.Controllers
 {
     public class LoginController : Controller
     {
