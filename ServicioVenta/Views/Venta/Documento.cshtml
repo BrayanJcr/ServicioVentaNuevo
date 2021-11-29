@@ -50,25 +50,34 @@
     </div>
     <div id="seleccion">
         <center>
-            <table style="width: 650px; border:2px solid #17a2b8;padding: 10px;">
+            <table style="        width: 650px;
+        border: 2px solid #0D1B27;
+        padding: 10px;">
                 <tr>
                     <td>
                         <table id="cabezera">
                             <tr>
                                 <td style="width:140px">
-                                    <img src="@Url.Content("~/Imagenes/tienda.png")" alt="" height="70">
+                                    <img src="@Url.Content("~/Imagenes/logoTienda.jpg")" alt="" height="70">
                                 </td>
                                 <td style="width:290px">
                                     <table style="width:100%">
-                                        <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">MI TIENDA ONLINE S.A.C TEST</label></td></tr>
+                                        <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">TIENDA ONLINE</label></td></tr>
                                         <tr><td colspan="4" align="center" style="font-size:14px">Atendido por: <span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
                                         <tr><td colspan="4" align="center" style="font-size:14px"><span>@Html.DisplayTextFor(model => model.oTienda.Direccion)</span></td> </tr>
                                     </table>
                                 </td>
                                 <td style="width:200px;">
-                                    <table style="width: 100%; height: 100px; font-weight: bold;border:2px solid #17a2b8;font-size:14px ">
+                                    <table style="        width: 100%;
+        height: 100px;
+        font-weight: bold;
+        border: 2px solid #0D1B27;
+        font-size: 14px">
                                         <tr><td align="center">R.U.C. <span>@Html.DisplayTextFor(model => model.oTienda.RUC)</span></td></tr>
-                                        <tr style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;font-size:16px !important"><td align="center"><span>@Html.DisplayTextFor(model => model.TipoDocumento)</span></td></tr>
+                                        <tr style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;
+        font-size: 16px !important"><td align="center"><span>@Html.DisplayTextFor(model => model.TipoDocumento)</span></td></tr>
                                         <tr><td align="center">NRO - <span>@Html.DisplayTextFor(model => model.Codigo)</span> </td></tr>
                                     </table>
                                 </td>
@@ -101,7 +110,9 @@
                     </td>
                 </tr>
                 <tr><td><hr /></td></tr>
-                <tr style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">
+                <tr style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;">
                     <td style="padding:4px">
                         <u>Detalle Productos</u>
                     </td>
@@ -110,7 +121,9 @@
                     <td>
                         <table id="tbCompras" border="1" style=" width: 100%;">
                             <thead>
-                                <tr style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">
+                                <tr style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;">
                                     <th style="width: 15%;">Cantidad</th>
                                     <th style="width: 45%;">Descripcion</th>
                                     <th style="width: 20%;">P.Unit</th>
@@ -137,20 +150,29 @@
                         <table style="font-weight: bold; width:100%">
                             <tr>
                                 <td colspan="4">
-                                    <table width='250' style="border:1px solid #17a2b8;">
-                                        <tr style="border:1px solid #17a2b8;">
-                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">Pago con S/.</td>
+                                    <table width='250' style="        border: 1px solid #0D1B27;">
+                                        <tr style="        border: 1px solid #0D1B27;">
+                                            <td style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;">Pago con S/.</td>
                                             <td><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
-                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">Cambio S/.</td>
+                                            <td style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;">Cambio S/.</td>
                                             <td><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
                                         </tr>
                                     </table>
                                 </td>
                                 <td colspan="2" align="right">
-                                    <table style="font-weight: bold; width: 150px;border:1px solid #17a2b8;">
+                                    <table style="        font-weight: bold;
+        width: 150px;
+        border: 1px solid #0D1B27;">
                                         <tr>
                                             <td>Total S/.</td>
-                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;border:1px solid #17a2b8;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
+                                            <td style="        color: #fff;
+        background-color: #0D1B27;
+        -webkit-print-color-adjust: exact;
+        border: 1px solid #0D1B27;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
                                         </tr>
                                     </table>
                                 </td>

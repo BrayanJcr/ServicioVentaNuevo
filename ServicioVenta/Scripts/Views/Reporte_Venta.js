@@ -24,7 +24,6 @@ $(document).ready(function () {
 
 
     $.datepicker.setDefaults($.datepicker.regional['es']);
-    activarMenu("Reportes");
 
     $("#txtFechaInicio").datepicker();
     $("#txtFechaFin").datepicker();
