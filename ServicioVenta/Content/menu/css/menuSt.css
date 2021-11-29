@@ -62,7 +62,6 @@ body {
 .sidebar-wrapper .sidebar-search .input-group-text,
 .sidebar-wrapper .sidebar-menu ul li a,
 #show-sidebar,
-
 #close-sidebar {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -363,7 +362,20 @@ body {
 
 /*--------------------------page-content-----------------------------*/
 
+.page-wrapper .page-content {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 20px;
+}
 
+    .page-wrapper .page-content > div {
+        padding: 20px 40px;
+    }
+
+.page-wrapper .page-content {
+    overflow-x: hidden;
+}
 
 /*------scroll bar---------------------*/
 

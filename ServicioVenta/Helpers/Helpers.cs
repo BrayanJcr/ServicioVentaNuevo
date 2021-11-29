@@ -26,19 +26,26 @@ namespace ServicioVenta.Helpers
 
                 foreach (Menu item in rptUsuario.oListaMenu)
                 {
-                    sb.AppendLine("<li class='nav-item dropdown'>");
-                    sb.AppendLine("<a class='nav-link dropdown-toggle' href='#' data-toggle='dropdown'><i class='" + item.Icono +"'></i> " + item.Nombre + "</a>");
 
-                    sb.AppendLine("<div class='dropdown-menu drop-menu'>");
+                    sb.AppendLine("<li class='sidebar-dropdown'>");
+                    sb.AppendLine("<a href = 'javascript:;' >");
+                    sb.AppendLine("<i class='" + item.Icono + "'></i>");
+                    sb.AppendLine("<span>" + item.Nombre + "</span>");
+                    sb.AppendLine("</a>");
+                    sb.AppendLine("<div class='sidebar-submenu'>");
+                    sb.AppendLine("<ul>");
                     foreach (SubMenu subitem in item.oSubMenu)
                     {
-                        //fas fa-caret-right
-                        if(subitem.Activo == true)
-                            sb.AppendLine("<a class='dropdown-item' name='" + item.Nombre + "' href='/" + subitem.Controlador + "/" + subitem.Vista + "'><i class='" + subitem.Icono + "'></i> " + subitem.Nombre + "</a>");
+                        sb.AppendLine("<li>");
+                        if (subitem.Activo == true)
+                        {
+                            sb.AppendLine("<a href='/" + subitem.Controlador + "/" + subitem.Vista + "'>" + subitem.Nombre + "</a>");
 
+                        }
+                        sb.AppendLine("</li>");
                     }
+                    sb.AppendLine("</ul>");
                     sb.AppendLine("</div>");
-
                     sb.AppendLine("</li>");
                 }
 
